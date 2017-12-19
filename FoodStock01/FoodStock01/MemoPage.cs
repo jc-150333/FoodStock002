@@ -21,8 +21,14 @@ namespace FoodStock01
 
         int id = 1;
 
-        public MemoPage()
+        public MemoPage(string title)
         {
+            //タブに表示される文字列
+            Title = title;
+
+            //アイコン
+            Icon = "note32.png";
+
             if (MemoModel.selectUser() != null)
             {
                 ar = new ObservableCollection<MemoModel>(MemoModel.selectUser());
