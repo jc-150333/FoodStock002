@@ -58,9 +58,9 @@ namespace FoodStock01
             {//追加ボタンの処理
                 if (!String.IsNullOrEmpty(entry.Text))
                 {
-                    //MemoModel.insertUser(id, entry.Text);
+                    MemoModel.insertUser(id, entry.Text);
 
-                    ar.Add(new MemoModel { Name = entry.Text });
+                    //ar.Add(new MemoModel { Name = entry.Text });
 
                     id++;
 
