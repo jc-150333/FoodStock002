@@ -33,10 +33,6 @@ namespace FoodStock01
             {
                 ar = new ObservableCollection<MemoModel>(MemoModel.selectUser());
             }
-            else
-            {
-                MemoModel.insertUser(0, "");
-            }
             var listView = new ListView
             {
                 //ItemsSource = UserModel.selectUser(),
@@ -62,7 +58,7 @@ namespace FoodStock01
             {//追加ボタンの処理
                 if (!String.IsNullOrEmpty(entry.Text))
                 {
-                    MemoModel.insertUser(id, entry.Text);
+                    //MemoModel.insertUser(id, entry.Text);
 
                     ar.Add(new MemoModel { Name = entry.Text });
 
