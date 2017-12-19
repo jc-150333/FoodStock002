@@ -11,7 +11,7 @@ namespace FoodStock01
     {
         public MemoPage(string title)
         {
-            //タブに表示される文字列
+            //タブに表示される文字列q
             Title = title;
 
            //アイコン
