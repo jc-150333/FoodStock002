@@ -16,7 +16,7 @@ namespace FoodStock01
 
         static readonly object Locker = new object();
 
-        private ObservableCollection<MemoModel> ar;
+        private ObservableCollection<MemoModel> ar = new ObservableCollection<MemoModel>();
         //public ObservableCollection<UserModel> ar;
 
         int id = 1;
@@ -60,7 +60,7 @@ namespace FoodStock01
                 {
                     MemoModel.insertUser(id, entry.Text);
 
-                    //ar.Add(new MemoModel { Name = entry.Text });
+                    ar.Add(new MemoModel { Name = entry.Text });
 
                     id++;
 
