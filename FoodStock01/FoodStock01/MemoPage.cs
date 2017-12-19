@@ -33,6 +33,10 @@ namespace FoodStock01
             {
                 ar = new ObservableCollection<MemoModel>(MemoModel.selectUser());
             }
+            else
+            {
+                MemoModel.insertUser(0, "");
+            }
             var listView = new ListView
             {
                 //ItemsSource = UserModel.selectUser(),
@@ -52,7 +56,7 @@ namespace FoodStock01
             {
                 WidthRequest = 60,
                 TextColor = Color.Black,
-                Text = "Add"
+                Text = "追加"
             };
             buttonAdd.Clicked += (s, a) =>
             {//追加ボタンの処理
