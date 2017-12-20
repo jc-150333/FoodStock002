@@ -149,5 +149,48 @@ namespace FoodStock01
                 }
             }
         }
+
+        public static void Delete(int s_no)
+        {
+            //データベースに接続する
+            using (SQLiteConnection db = new SQLiteConnection(App.dbPath))
+            {
+                try
+                {
+                    //データベースにFoodテーブルを作成する
+                    db.CreateTable<FoodModel>();
+
+                    FoodModel.deleteUser(s_no);
+
+                    db.Commit();
+                }
+                catch (Exception e)
+                {
+                    db.Rollback();
+                    System.Diagnostics.Debug.WriteLine(e);
+                }
+            }
+        }
+
+        public static void deleteUser(int id)
+        {
+            //データベースに接続する
+            using (SQLiteConnection db = new SQLiteConnection(App.dbPath))
+            {
+                try
+                {
+                    //データベースにUserテーブルを作成する
+                    db.CreateTable<UserModel>();
+
+                    db.Delete<UserModel>(id);//デリートで渡す値は主キーじゃないといけない説
+                    db.Commit();
+                }
+                catch (Exception e)
+                {
+                    db.Rollback();
+                    System.Diagnostics.Debug.WriteLine(e);
+                }
+            }
+        }
     }
 }

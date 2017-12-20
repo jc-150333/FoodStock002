@@ -81,50 +81,7 @@ namespace FoodStock01
                 }
             }
         }
-
-        /*******************アップデートメソッド**************************************/
-        public static List<MemoModel> UpdateUser(int id, string name)
-        {
-            using (SQLiteConnection db = new SQLiteConnection(App.dbPath))
-            {
-
-                try
-                {
-                    //データベースに指定したSQLを発行します
-                    return db.Query<MemoModel>("UPDATE [User] SET [NAME]=[name] WHERE [Id]=[id]");
-
-                }
-                catch (Exception e)
-                {
-
-                    System.Diagnostics.Debug.WriteLine(e);
-                    return null;
-                }
-            }
-        }
-
-
-        /*******************オーダーメソッド**************************************/
-        public static List<MemoModel> orderUser()
-        {
-            using (SQLiteConnection db = new SQLiteConnection(App.dbPath))
-            {
-
-                try
-                {
-                    //データベースに指定したSQLを発行します
-                    return db.Query<MemoModel>("SELECT * FROM [User] ORDER BY User.Id DESC ");
-
-                }
-                catch (Exception e)
-                {
-
-                    System.Diagnostics.Debug.WriteLine(e);
-                    return null;
-                }
-            }
-        }
-
+        
         public override string ToString()
         {
             return Name;
