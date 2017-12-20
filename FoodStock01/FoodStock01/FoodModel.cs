@@ -96,8 +96,9 @@ namespace FoodStock01
                 {
                     //データベースにFoodテーブルを作成する
                     db.CreateTable<FoodModel>();
-
+                    
                     db.Delete<FoodModel>(f_no);//デリートで渡す値は主キーじゃないといけない説
+                    
                     db.Commit();
                 }
                 catch (Exception e)
