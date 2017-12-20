@@ -180,9 +180,9 @@ namespace FoodStock01
                 try
                 {
                     //データベースにUserテーブルを作成する
-                    db.CreateTable<UserModel>();
+                    db.CreateTable<FoodModel>();
 
-                    db.Delete<UserModel>(id);//デリートで渡す値は主キーじゃないといけない説
+                    db.Delete<FoodModel>(id);//デリートで渡す値は主キーじゃないといけない説
                     db.Commit();
                 }
                 catch (Exception e)
