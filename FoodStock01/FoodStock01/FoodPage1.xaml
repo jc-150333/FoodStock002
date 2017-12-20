@@ -66,7 +66,7 @@
                                 </Grid.ColumnDefinitions>
 
                                 <toolkit:CustomButtonDelete CheckedChanged = "Delete_Clicked"
-                                                              NoText="{Binding S_no}"
+                                                              NoText="{Binding S_no}"/>
                                 <Label Text="{Binding F_name}" 
                                    Grid.Column="0" Grid.Row="0"
                                    FontSize="Large"/>
