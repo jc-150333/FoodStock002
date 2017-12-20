@@ -53,17 +53,22 @@ namespace FoodStock01
             
         }
 
-        void Delete_Clicked(object sender, EventArgs e)
+        async void Delete_Clicked(object sender, EventArgs e)
         {
             string no = ((CustomButtonDelete)sender).NoText;
 
             int f_no = int.Parse(no);
 
-            FoodModel.DeleteFood(f_no);
+            
 
-            Title = "食材リスト";
+            if (await DisplayAlert("削除してよろしいですか", f_no.ToString(), "OK", "キャンセル"))
+            {
+                FoodModel.DeleteFood(f_no);
+            }
 
-            InitializeComponent();
+            //Title = "食材リスト";
+
+            //InitializeComponent();
         }
     }
 }
