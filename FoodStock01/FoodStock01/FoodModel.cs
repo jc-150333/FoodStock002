@@ -150,7 +150,7 @@ namespace FoodStock01
             }
         }
 
-        public static void Delete(int s_no)
+        public static void Delete(int f_no)
         {
             //データベースに接続する
             using (SQLiteConnection db = new SQLiteConnection(App.dbPath))
@@ -160,7 +160,9 @@ namespace FoodStock01
                     //データベースにFoodテーブルを作成する
                     db.CreateTable<FoodModel>();
 
-                    FoodModel.deleteUser(s_no);
+                    //FoodModel.deleteUser(f_no);
+
+                    db.Delete<FoodModel>(f_no);
 
                     db.Commit();
                 }
@@ -172,25 +174,5 @@ namespace FoodStock01
             }
         }
 
-        public static void deleteUser(int id)
-        {
-            //データベースに接続する
-            using (SQLiteConnection db = new SQLiteConnection(App.dbPath))
-            {
-                try
-                {
-                    //データベースにUserテーブルを作成する
-                    db.CreateTable<FoodModel>();
-
-                    db.Delete<FoodModel>(id);//デリートで渡す値は主キーじゃないといけない説
-                    db.Commit();
-                }
-                catch (Exception e)
-                {
-                    db.Rollback();
-                    System.Diagnostics.Debug.WriteLine(e);
-                }
-            }
-        }
     }
 }

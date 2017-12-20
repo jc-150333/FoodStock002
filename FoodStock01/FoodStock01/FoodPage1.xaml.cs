@@ -57,9 +57,9 @@ namespace FoodStock01
         {
             string no1 = ((CustomButtonDelete)sender).NoText;
 
-            int s_no1 = int.Parse(no1);//
+            int f_no1 = int.Parse(no1);//
             /***ここから試し***/
-            FoodModel.Delete(s_no1);
+            FoodModel.Delete(f_no1);
 
             Title = "保存食品リスト";
 
