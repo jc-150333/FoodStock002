@@ -65,8 +65,7 @@
                                     <ColumnDefinition Width="*" />
                                 </Grid.ColumnDefinitions>
 
-                                <toolkit:CustomButtonDelete CheckedChanged = "Delete_Clicked"
-                                                              NoText="{Binding S_no}"/>
+                                
                                 <Label Text="{Binding F_name}" 
                                    Grid.Column="0" Grid.Row="0"
                                    FontSize="Large"/>
@@ -96,6 +95,8 @@
                                                   HorizontalOptions="End"
                                                   VerticalOptions="Center"
                                                   Text="{Binding Name}"/>
+                                    <toolkit:CustomButtonDelete CheckedChanged = "Delete_Clicked"
+                                                              NoText="{Binding F_no}"/>
                                 </Grid>
                             </Grid>
                         </ViewCell>

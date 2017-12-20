@@ -23,6 +23,7 @@ namespace FoodStock01
                    ((CustomButtonDelete)bindable).textNoLabel.Text = (string)newValue;
                });
 
+        /*
         public static readonly BindableProperty NameTextProperty =
            BindableProperty.Create(
                "NameText",
@@ -56,6 +57,7 @@ namespace FoodStock01
                   ((CustomButtonDelete)bindable).textUnitLabel.Text = (string)newValue;
               });
 
+    */
         public static readonly BindableProperty IsCheckedProperty =
            BindableProperty.Create(
                "IsChecked",
@@ -86,7 +88,7 @@ namespace FoodStock01
             set { SetValue(NoTextProperty, value); }
             get { return (string)GetValue(NoTextProperty); }
         }
-
+        /*
         public string NameText
         {
             set { SetValue(NameTextProperty, value); }
@@ -104,7 +106,7 @@ namespace FoodStock01
             set { SetValue(UnitTextProperty, value); }
             get { return (string)GetValue(UnitTextProperty); }
         }
-
+        */
         public bool IsChecked
         {
             set { SetValue(IsCheckedProperty, value); }

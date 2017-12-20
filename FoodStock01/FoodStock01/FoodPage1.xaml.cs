@@ -55,11 +55,11 @@ namespace FoodStock01
 
         void Delete_Clicked(object sender, EventArgs e)
         {
-            string no1 = ((CustomButton)sender).NoText;
+            string no1 = ((CustomButtonDelete)sender).NoText;
 
             int s_no1 = int.Parse(no1);//
             /***ここから試し***/
-            StockFoodModel.UpdateStockPlus02(s_no1);
+            FoodModel.Delete(s_no1);
 
             Title = "保存食品リスト";
 
