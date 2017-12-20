@@ -150,29 +150,5 @@ namespace FoodStock01
             }
         }
 
-        public static void Delete(int f_no)
-        {
-            //データベースに接続する
-            using (SQLiteConnection db = new SQLiteConnection(App.dbPath))
-            {
-                try
-                {
-                    //データベースにFoodテーブルを作成する
-                    db.CreateTable<FoodModel>();
-
-                    //FoodModel.deleteUser(f_no);
-
-                    db.Delete<FoodModel>(f_no);
-
-                    db.Commit();
-                }
-                catch (Exception e)
-                {
-                    db.Rollback();
-                    System.Diagnostics.Debug.WriteLine(e);
-                }
-            }
-        }
-
     }
 }

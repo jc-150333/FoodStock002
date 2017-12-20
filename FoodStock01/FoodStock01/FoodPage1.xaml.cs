@@ -59,11 +59,11 @@ namespace FoodStock01
 
             int f_no1 = int.Parse(no1);//
             /***ここから試し***/
-            FoodModel.Delete(f_no1);
+            FoodModel.DeleteFood(f_no1);
 
-            Title = "保存食品リスト";
+            //Title = "保存食品リスト";
 
-            InitializeComponent();
+            //InitializeComponent();
         }
     }
 }
