@@ -81,6 +81,8 @@ namespace FoodStock01
                 if (await DisplayAlert("全て削除してよろしいですか", "", "OK", "キャンセル"))
                 {
                     MemoModel.DeleteAllMemo();
+
+                    ar = new ObservableCollection<MemoModel>();
                 }
             };
 
