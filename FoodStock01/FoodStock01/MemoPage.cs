@@ -70,6 +70,20 @@ namespace FoodStock01
                 }
             };
 
+            var buttonAllDelete = new Button
+            {
+                WidthRequest = 60,
+                TextColor = Color.Black,
+                Text = "全削除"
+            };
+            buttonAdd.Clicked += async(s, a) =>
+            {//追加ボタンの処理
+                if (await DisplayAlert("全て削除してよろしいですか", "", "OK", "キャンセル"))
+                {
+                    MemoModel.DeleteAllMemo();
+                }
+            };
+
             listView.ItemTapped += async (s, a) =>
             {//リストタップジ
                 var item = (MemoModel)a.Item;
@@ -91,7 +105,7 @@ namespace FoodStock01
                             BackgroundColor = Color.HotPink,
                             Padding = 5,
                             Orientation = StackOrientation.Horizontal,
-                            Children = {entry,buttonAdd}//Entryコントロールとボタンコントロールを配置
+                            Children = {entry,buttonAdd,buttonAllDelete}//Entryコントロールとボタンコントロールを配置
                         },
                         listView//その下にリストボックス
                     }

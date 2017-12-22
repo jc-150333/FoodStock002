@@ -107,6 +107,28 @@ namespace FoodStock01
                 }
             }
         }
-       
+
+        //全削除
+        public static void DeleteAllMemo()
+        {
+            //データベースに接続する
+            using (SQLiteConnection db = new SQLiteConnection(App.dbPath))
+            {
+                try
+                {
+                    //データベースにFoodテーブルを作成する
+                    db.CreateTable<MemoModel>();
+
+                    db.DeleteAll<MemoModel>();//デリートで渡す値は主キーじゃないといけない説
+                    db.Commit();
+                }
+                catch (Exception e)
+                {
+                    db.Rollback();
+                    System.Diagnostics.Debug.WriteLine(e);
+                }
+            }
+        }
+
     }
 }
