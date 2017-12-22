@@ -76,7 +76,7 @@ namespace FoodStock01
                 TextColor = Color.Black,
                 Text = "全削除"
             };
-            buttonAdd.Clicked += async(s, a) =>
+            buttonAllDelete.Clicked += async(s, a) =>
             {//追加ボタンの処理
                 if (await DisplayAlert("全て削除してよろしいですか", "", "OK", "キャンセル"))
                 {
