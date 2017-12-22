@@ -19,7 +19,7 @@ namespace FoodStock01
         private ObservableCollection<MemoModel> ar = new ObservableCollection<MemoModel>();
         //public ObservableCollection<UserModel> ar;
 
-        int id = 1;
+        //int id = 1;
 
         public MemoPage(string title)
         {
@@ -58,11 +58,11 @@ namespace FoodStock01
             {//追加ボタンの処理
                 if (!String.IsNullOrEmpty(entry.Text))
                 {
-                    MemoModel.insertUser(id, entry.Text);
+                    MemoModel.insertUser(entry.Text);
 
                     ar.Add(new MemoModel { Name = entry.Text });
 
-                    id++;
+                    //id++;
 
                     //Application.Current.MainPage = new MainPage4();
 
@@ -82,7 +82,7 @@ namespace FoodStock01
                 {
                     MemoModel.DeleteAllMemo();
 
-                    ar = new ObservableCollection<MemoModel>();
+                    new MemoNavi(new MemoPage("メモ"));
                 }
             };
 

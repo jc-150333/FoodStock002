@@ -119,7 +119,7 @@ namespace FoodStock01
                     //データベースにFoodテーブルを作成する
                     db.CreateTable<MemoModel>();
 
-                    db.DeleteAll<MemoModel>();//デリートで渡す値は主キーじゃないといけない説
+                    db.DeleteAll<MemoModel>();
                     db.Commit();
                 }
                 catch (Exception e)
